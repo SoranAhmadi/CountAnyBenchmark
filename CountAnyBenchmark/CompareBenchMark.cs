@@ -1,9 +1,4 @@
 ﻿using BenchmarkDotNet.Attributes;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CountAnyBenchmark
 {
@@ -25,14 +20,14 @@ namespace CountAnyBenchmark
 
         [Benchmark]
         public bool CheckAnyWithCondition()
-        {
-            return _numbers.Any(n=>n%2000>0);
+        {   
+            return _numbers.Any(n=>n%2000==0);
         }
 
         [Benchmark]
         public bool CheckCountWithCondition()
         {
-            return _numbers.Count(n => n % 2000 > 0) > 0;
+            return _numbers.Count(n => n % 2000 == 0) > 0;
         }
     }
 }
